@@ -1,7 +1,8 @@
 .flex-container {
  display: flex;
  flex-direction: column;
- background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+ background-color: #0093E9;
+ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
  height: 100vh;
  padding-top: auto;
 }
@@ -20,6 +21,8 @@
  margin-right: auto;
  width: 50%;
  padding: 20px;
+
+ 
  
 }
 .buttons{
@@ -47,7 +50,7 @@
 }
   
 button {
- background: linear-gradient(to right,#196BCA ,#6433E0);
+ background: blue;
  background-color: #196BCA;
  color: #fff;
  font-family: Trebuchet MS;
@@ -72,7 +75,8 @@ button {
 }
 
 #random {
-    background: linear-gradient(to right,#fbff00 ,#e03381);
+    
+    background-image: linear-gradient(65deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
 }
 #black {
     background: linear-gradient(to right,#000000 ,#000000);
@@ -100,8 +104,15 @@ button {
     height: 30px;
 }
 
-#saveJpg {
+#saveJpg, #reset {
  background: transparent;
  border: solid rgb(255, 255, 255);
  color: #fff;
 }
+
+#saveJpg:hover, #reset:hover{
+    background: white;
+    border: solid rgb(255, 255, 255);
+    color: #000;
+    transition:  0.1s ease-in;
+   }
