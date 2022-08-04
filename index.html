@@ -11,21 +11,37 @@
     <div class="flex-container">
         <div class="title"><h1>SketchPad</h1></div>
         <div class="content">
-        
-            <div class="board"></div>
-            <div class="buttons">
-                <button onclick="changeColor('black')">Black</button>
-                <button onclick="changeColor('white')">Erasor</button>
-                <button onclick="changeColor('gray')">Gray</button>
-                <button onclick="changeColor('random')">Random</button>
-                <button onclick="resetBoard()">Reset</button>
+            <div class="mode">Mode: Coloring</div>
+            <div id="saveThis">
+                <div class="board"></div>
             </div>
-            <div>
+            <div class="buttons">
+                <button id="black" onclick="changeColor('black')">Black</button>
+                <button id="gray" onclick="changeColor('gray')">Gray</button>
+                <button id="random" onclick="changeColor('random')">Random</button>
+                <button id="white" onclick="changeColor('white')">Erasor</button>
+                <button id="reset" onclick="resetBoard()">Reset</button>
+            </div>
+            <div class="sizeInput">
                 <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)"/>
                 <button>Set Size</button>
+                <button id="saveJpg">Save image (PNG)</button>
             </div>
         </div>
     </div>
     
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="http://cdn.jsdelivr.net/g/filesaver.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#saveJpg").click(function(){
+            domtoimage.toBlob(document.getElementById('saveThis')).then(function (blob) {
+        window.saveAs(blob, 'art.png');
+    });
+        });
+    });
+</script>
 </html>

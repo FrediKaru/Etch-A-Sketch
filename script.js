@@ -1,3 +1,5 @@
+
+
 let color = "black";
 let click = true;
 
@@ -59,3 +61,4 @@ document.querySelector('body').addEventListener('click', (e)=> {
     }
     }
 });
+
